@@ -1,0 +1,32 @@
+name: Regenerate Insight Cards
+
+on:
+  schedule:
+    - cron: '0 14 1 * *'   # 1st of each month, 14:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate-insights:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate insights
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/generate_insights.py
+
+      - name: Commit updated insights
+        run: |
+          git config user.name "insights-bot"
+          git config user.email "insights-bot@users.noreply.github.com"
+          git add data/insights_data.json
+          git diff --staged --quiet || git commit -m "Regenerate insight cards ($(date -u +%Y-%m))"
+          git push
