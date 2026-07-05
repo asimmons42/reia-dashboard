@@ -1,0 +1,12 @@
+[
+  {"name": "Cleveland",         "state": "OH", "zip": "44115", "county_fips": "39035"},
+  {"name": "Indianapolis",      "state": "IN", "zip": "46204", "county_fips": "18097"},
+  {"name": "Columbus",          "state": "OH", "zip": "43215", "county_fips": "39049"},
+  {"name": "Kansas City",       "state": "MO", "zip": "64106", "county_fips": "29095"},
+  {"name": "Birmingham",        "state": "AL", "zip": "35203", "county_fips": "01073"},
+  {"name": "Tuscaloosa",        "state": "AL", "zip": "35401", "county_fips": "01125"},
+  {"name": "Charlotte",         "state": "NC", "zip": "28202", "county_fips": "37119"},
+  {"name": "Dallas-Fort Worth", "state": "TX", "zip": "75201", "county_fips": "48113"},
+  {"name": "Buffalo",           "state": "NY", "zip": "14202", "county_fips": "36029"},
+  {"name": "Philadelphia",      "state": "PA", "zip": "19102", "county_fips": "42101"}
+]

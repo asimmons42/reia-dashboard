@@ -1,0 +1,8 @@
+[
+  {"name": "HousingWire", "url": "https://www.housingwire.com/feed/", "topic": "Mortgage & housing finance news"},
+  {"name": "Calculated Risk", "url": "https://www.calculatedriskblog.com/feeds/posts/default", "topic": "Macro housing & economic analysis"},
+  {"name": "The Mortgage Reports", "url": "https://www.themortgagereports.com/feed", "topic": "Mortgage rates & lending news"},
+  {"name": "Norada Real Estate Investments", "url": "https://www.noradarealestate.com/blog/feed/", "topic": "Investor market roundups"},
+  {"name": "BiggerPockets Blog", "url": "https://www.biggerpockets.com/blog/feed/", "topic": "Investor strategy & community"},
+  {"name": "Inman", "url": "https://www.inman.com/feed/", "topic": "Residential real estate industry news"}
+]

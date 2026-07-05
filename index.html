@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Investor Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2430; --ink-2:#242E3D; --ink-3:#2C3646;
+    --paper:#EDE6D6; --paper-2:#E3DAC5;
+    --brass:#B08D57; --brass-light:#D8BD8A;
+    --forest:#3F6248; --rust:#A13D2C;
+    --slate:#2A2E35; --line:#C9BB9C; --muted:#93A0AE;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--ink);color:var(--paper);font-family:'Inter',sans-serif;padding:0 0 60px;}
+  .wrap{max-width:1220px;margin:0 auto;padding:26px 20px 0;}
+  header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;border-bottom:1px solid rgba(216,189,138,0.3);padding-bottom:18px;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--brass-light);margin-bottom:8px;}
+  h1{font-family:'Source Serif 4',serif;font-weight:700;font-size:30px;margin:0 0 6px;}
+  .sub{color:#B9AF9A;font-size:13.5px;max-width:520px;line-height:1.5;}
+  .homebase{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--brass-light);text-align:right;line-height:1.6;}
+  nav.tabs{display:flex;gap:2px;position:sticky;top:0;background:var(--ink);z-index:10;padding-top:14px;}
+  nav.tabs button{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.5px;text-transform:uppercase;background:var(--ink-2);color:var(--muted);border:1px solid rgba(216,189,138,0.18);border-bottom:none;padding:11px 18px;cursor:pointer;border-radius:4px 4px 0 0;}
+  nav.tabs button.active{background:var(--paper);color:var(--slate);font-weight:600;}
+  nav.tabs button:hover:not(.active){color:var(--paper);}
+  .tabcontent{display:none;background:var(--ink-2);border:1px solid rgba(216,189,138,0.18);border-radius:0 4px 4px 4px;padding:24px 26px;margin-bottom:20px;}
+  .tabcontent.active{display:block;}
+  .section-title{font-family:'Source Serif 4',serif;font-size:19px;margin:0 0 4px;}
+  .section-note{color:var(--muted);font-size:12.5px;margin-bottom:16px;}
+  .sync-banner{display:flex;flex-wrap:wrap;gap:18px;background:var(--paper);color:var(--slate);border-radius:4px;padding:14px 18px;margin-bottom:18px;align-items:center;}
+  .sync-banner .stat{font-family:'IBM Plex Mono',monospace;}
+  .sync-banner .stat b{font-family:'Source Serif 4',serif;font-size:18px;display:block;}
+  .sync-banner .synctime{margin-left:auto;font-size:11px;color:#6b7280;}
+  .pulse-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
+  .pulse-card{background:var(--paper);color:var(--slate);border-radius:4px;padding:16px 18px;}
+  .pulse-card h3{font-family:'Source Serif 4',serif;font-size:15.5px;margin:0 0 8px;}
+  .pulse-card p{font-size:12.8px;line-height:1.55;margin:0 0 8px;}
+  .pulse-source{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b7280;border-top:1px dashed var(--line);padding-top:6px;}
+  .asof{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--brass-light);margin-bottom:14px;}
+  .refresh-note{margin-top:16px;font-size:12px;color:var(--muted);border-top:1px solid rgba(216,189,138,0.15);padding-top:12px;}
+  .ledger{background:var(--paper);border-radius:3px;padding:16px 20px;margin-bottom:20px;}
+  .ledger-title{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--slate);opacity:0.6;margin-bottom:10px;}
+  .ledger-row{display:flex;align-items:center;gap:14px;padding:8px 0;border-bottom:1px dashed var(--line);color:var(--slate);}
+  .ledger-row:last-child{border-bottom:none;}
+  .folio{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--brass);font-weight:600;width:22px;}
+  .ledger-name{font-weight:600;font-size:14.5px;min-width:170px;}
+  .ledger-bar-track{flex:1;height:8px;background:rgba(42,46,53,0.1);border-radius:5px;overflow:hidden;}
+  .ledger-bar-fill{height:100%;background:linear-gradient(90deg,var(--brass),var(--forest));border-radius:5px;}
+  .ledger-score{font-family:'IBM Plex Mono',monospace;font-weight:600;width:44px;text-align:right;}
+  .panel{background:var(--ink-3);border:1px solid rgba(216,189,138,0.14);border-radius:3px;padding:16px 18px;margin-bottom:18px;}
+  .weights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px 24px;}
+  .weight-item label{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:4px;}
+  .weight-item .wval{font-family:'IBM Plex Mono',monospace;color:var(--brass-light);}
+  input[type=range]{width:100%;accent-color:var(--brass);}
+  .weight-item .dir{font-size:10px;color:#8B96A3;margin-top:2px;}
+  .weight-footer{margin-top:12px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);}
+  button.reset,.add-btn{background:transparent;border:1px solid var(--brass);color:var(--brass-light);padding:6px 12px;border-radius:3px;font-size:12px;cursor:pointer;font-family:'Inter',sans-serif;}
+  button.reset:hover,.add-btn:hover{background:rgba(176,141,87,0.12);}
+  .add-btn.solid{background:var(--brass);color:var(--ink);font-weight:600;border:none;}
+  .add-btn.solid:hover{background:var(--brass-light);}
+  table{width:100%;border-collapse:collapse;font-size:12.5px;}
+  th{text-align:left;font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.5px;color:var(--brass-light);padding:7px;border-bottom:1px solid rgba(216,189,138,0.3);cursor:pointer;white-space:nowrap;}
+  th:hover{color:#fff;}
+  td{padding:5px 7px;border-bottom:1px solid rgba(255,255,255,0.06);vertical-align:middle;}
+  td input,td select{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);color:var(--paper);padding:4px 6px;border-radius:3px;font-size:12px;width:100%;font-family:'Inter',sans-serif;}
+  td input[type=number]{font-family:'IBM Plex Mono',monospace;}
+  td.computed{font-family:'IBM Plex Mono',monospace;color:var(--brass-light);white-space:nowrap;}
+  td.computed.neg{color:var(--rust);}
+  .score-cell{font-weight:700;font-family:'IBM Plex Mono',monospace;}
+  tr.top-row td{background:rgba(176,141,87,0.06);}
+  .del-btn{background:none;border:none;color:#7C8896;cursor:pointer;font-size:14px;}
+  .del-btn:hover{color:var(--rust);}
+  .table-wrap{overflow-x:auto;}
+  .status{font-size:11px;color:#7C8896;margin-top:10px;font-family:'IBM Plex Mono',monospace;}
+  .summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:18px;}
+  .summary-card{background:var(--paper);color:var(--slate);border-radius:4px;padding:14px 16px;}
+  .summary-card .label{font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.5px;color:#6b7280;margin-bottom:4px;}
+  .summary-card .value{font-family:'Source Serif 4',serif;font-size:22px;font-weight:700;}
+  .summary-card .value.neg{color:var(--rust);}
+  .kanban{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;overflow-x:auto;}
+  .kcol{background:var(--ink-3);border-radius:4px;padding:10px;min-width:190px;}
+  .kcol h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:0.5px;color:var(--brass-light);margin:0 0 10px;display:flex;justify-content:space-between;}
+  .kcard{background:var(--paper);color:var(--slate);border-radius:4px;padding:10px 11px;margin-bottom:8px;font-size:12px;}
+  .kcard input,.kcard select,.kcard textarea{width:100%;background:rgba(0,0,0,0.04);border:1px solid rgba(0,0,0,0.12);border-radius:3px;padding:4px 5px;font-size:11.5px;font-family:'Inter',sans-serif;margin-bottom:5px;}
+  .kcard textarea{resize:vertical;min-height:32px;}
+  .kcard .krow{display:flex;gap:5px;}
+  .kcard .krow input{flex:1;}
+  .kcard-top{display:flex;justify-content:space-between;align-items:center;}
+  .kcard-del{background:none;border:none;color:#9ca3af;cursor:pointer;font-size:12px;}
+  .kcard-del:hover{color:var(--rust);}
+  .criteria-key{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px 18px;font-size:11.5px;color:var(--muted);margin-top:12px;line-height:1.5;}
+  .criteria-key b{color:var(--paper);}
+  .livetag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9.5px;background:rgba(63,98,72,0.15);color:var(--forest);border:1px solid rgba(63,98,72,0.3);border-radius:3px;padding:1px 5px;margin-left:5px;}
+  .headline-card{display:block;background:var(--paper);color:var(--slate);border-radius:4px;padding:16px 18px;text-decoration:none;transition:opacity .25s ease;}
+  .headline-card:hover{opacity:0.92;}
+  .headline-title{font-family:'Source Serif 4',serif;font-size:15.5px;line-height:1.4;margin-bottom:8px;}
+  .headline-summary{font-size:12px;color:#4b5563;line-height:1.5;margin-bottom:8px;}
+  .headline-meta{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b7280;}
+  .headline-dots{display:flex;gap:6px;margin-top:12px;}
+  .headline-dots span{width:6px;height:6px;border-radius:50%;background:rgba(216,189,138,0.35);cursor:pointer;display:inline-block;}
+  .headline-dots span.active{background:var(--brass);}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div>
+    <div class="eyebrow">Real estate investor command center</div>
+    <h1>Investor Dashboard</h1>
+    <div class="sub">Market data auto-refreshes weekly via GitHub Actions. Everything you edit (portfolio, deals, weights) stays in this browser.</div>
+  </div>
+  <div class="homebase">HOME BASE<br>1152 Romano Ave · Bellmawr, NJ<br>Strategy: Buy &amp; Hold / Cash Flow</div>
+</header>
+<nav class="tabs" id="tabNav"></nav>
+</div>
+
+<div class="wrap" style="padding-top:0;">
+
+  <div class="tabcontent" id="tab-pulse">
+    <div class="section-title">Market Pulse</div>
+    <div class="section-note">Live figures pull from FRED each week. Headlines rotate from trusted industry RSS feeds, refreshed weekly. Insight cards are AI-researched and regenerated monthly.</div>
+    <div class="sync-banner" id="macroBanner">Loading live data…</div>
+
+    <div class="panel">
+      <div style="font-family:'Source Serif 4',serif;font-size:15px;margin-bottom:4px;">Latest Headlines <span class="livetag">rotates weekly · click for source</span></div>
+      <div class="section-note" id="headlinesNote">Loading…</div>
+      <a id="headlineCard" class="headline-card" href="#" target="_blank" rel="noopener noreferrer">
+        <div class="headline-title" id="headlineTitle">—</div>
+        <div class="headline-summary" id="headlineSummary"></div>
+        <div class="headline-meta" id="headlineMeta">—</div>
+      </a>
+      <div class="headline-dots" id="headlineDots"></div>
+    </div>
+
+    <div style="font-family:'Source Serif 4',serif;font-size:19px;margin:22px 0 4px;">Insights</div>
+    <div class="section-note" id="insightsNote">Loading…</div>
+    <div class="pulse-grid" id="insightsGrid"></div>
+
+    <div class="refresh-note">Macro numbers and headlines: data/macro_data.json &amp; data/rss_data.json, written weekly by the GitHub Action. Insight cards: data/insights_data.json, regenerated monthly by a Claude API call with web search. Until the first monthly run completes, you're seeing bundled defaults.</div>
+  </div>
+
+  <div class="tabcontent" id="tab-opportunity">
+    <div class="section-title">Opportunity Analysis</div>
+    <div class="section-note">Rank candidate metros by the factors that actually drive cash flow, weighted the way you want.</div>
+
+    <div class="panel">
+      <div style="font-family:'Source Serif 4',serif;font-size:15px;margin-bottom:4px;">Live Feed <span class="livetag">auto-updated</span></div>
+      <div class="section-note" id="liveFeedNote">Loading…</div>
+      <div class="table-wrap">
+        <table id="liveFeedTable">
+          <thead><tr><th>Market</th><th>RentCast Avg Rent</th><th>RentCast Avg Price</th><th>State Unemployment</th><th>Pop. Growth (Census, YoY)</th></tr></thead>
+          <tbody id="liveFeedBody"><tr><td colspan="5" style="color:var(--muted);">No data yet — runs after the first scheduled Action, or trigger one manually from the Actions tab.</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="ledger">
+      <div class="ledger-title">Current Ranking</div>
+      <div id="ledgerRows"></div>
+    </div>
+    <div class="panel">
+      <div style="font-family:'Source Serif 4',serif;font-size:15px;margin-bottom:4px;">Weighting</div>
+      <div class="section-note">Weights auto-normalize — they don't need to add to 100.</div>
+      <div class="weights-grid" id="weightsGrid"></div>
+      <div class="weight-footer">
+        <span id="weightTotal"></span>
+        <button class="reset" onclick="resetWeights()">Reset to defaults</button>
+      </div>
+    </div>
+    <div class="panel">
+      <div style="font-family:'Source Serif 4',serif;font-size:15px;margin-bottom:4px;">Candidate Markets <span class="livetag">manual — drives score</span></div>
+      <div class="section-note">Click a column header to sort. Copy numbers over from the Live Feed above as they update.</div>
+      <div class="table-wrap">
+        <table id="marketTable">
+          <thead><tr>
+            <th data-key="name">Market</th><th data-key="price">Med. Price</th><th data-key="rent">Rent (3BR)</th>
+            <th data-key="ptr">Price/Rent</th><th data-key="yield">Gross Yield</th><th data-key="jobGrowth">Job Growth</th>
+            <th data-key="popGrowth">Pop Growth (10yr)</th><th data-key="landlord">Landlord-Friendly</th>
+            <th data-key="taxRate">Property Tax</th><th data-key="insurance">Insurance</th><th data-key="score">Score</th><th></th>
+          </tr></thead>
+          <tbody id="marketBody"></tbody>
+        </table>
+      </div>
+      <button class="add-btn solid" style="margin-top:10px;" onclick="addMarket()">+ Add Market</button>
+      <div class="status" id="marketStatus">Loading…</div>
+      <div class="criteria-key">
+        <div><b>Gross Yield</b> — annual rent ÷ price.</div>
+        <div><b>Landlord-Friendly</b> — 1–10, eviction speed &amp; regulation.</div>
+        <div><b>Property Tax</b> — effective annual rate.</div>
+        <div><b>Price/Rent</b> — lower generally means better cash flow.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tabcontent" id="tab-deals">
+    <div class="section-title">Deals in Motion</div>
+    <div class="section-note">Your active acquisition pipeline. Move a deal forward by changing its stage. Saved in this browser.</div>
+    <button class="add-btn solid" style="margin-bottom:14px;" onclick="addDeal()">+ Add Deal</button>
+    <div class="kanban" id="kanban"></div>
+    <div class="status" id="dealStatus"></div>
+  </div>
+
+  <div class="tabcontent" id="tab-portfolio">
+    <div class="section-title">Portfolio</div>
+    <div class="section-note">Properties you own today. Saved in this browser — edit with real numbers.</div>
+    <div class="summary-grid" id="summaryGrid"></div>
+    <div class="table-wrap">
+      <table id="portfolioTable">
+        <thead><tr>
+          <th>Property</th><th>Units</th><th>Purchase Price</th><th>Current Value</th><th>Mortgage Bal.</th>
+          <th>Cash Invested</th><th>Monthly Rent</th><th>Monthly PITI</th><th>Other Monthly Exp</th>
+          <th>Cash Flow</th><th>Equity</th><th>CoC Return</th><th></th>
+        </tr></thead>
+        <tbody id="portfolioBody"></tbody>
+      </table>
+    </div>
+    <button class="add-btn solid" style="margin-top:10px;" onclick="addProperty()">+ Add Property</button>
+    <div class="status" id="portfolioStatus"></div>
+  </div>
+
+</div>
+
+<script>
+/* ---------- localStorage helpers (real site, so this is safe/normal) ---------- */
+function lsGet(key){ try{ const v = localStorage.getItem(key); return v ? JSON.parse(v) : null; }catch(e){ return null; } }
+function lsSet(key, value){ try{ localStorage.setItem(key, JSON.stringify(value)); }catch(e){ console.error('localStorage save failed', e); } }
+
+/* ---------- Tabs ---------- */
+const TABS = [
+  {id:'pulse', label:'Market Pulse'},
+  {id:'opportunity', label:'Opportunity Analysis'},
+  {id:'deals', label:'Deals in Motion'},
+  {id:'portfolio', label:'Portfolio'},
+];
+document.getElementById('tabNav').innerHTML = TABS.map((t,i)=>
+  `<button class="${i===0?'active':''}" onclick="showTab('${t.id}')" id="navbtn-${t.id}">${t.label}</button>`).join('');
+function showTab(id){
+  TABS.forEach(t=>{
+    document.getElementById('tab-'+t.id).classList.toggle('active', t.id===id);
+    document.getElementById('navbtn-'+t.id).classList.toggle('active', t.id===id);
+  });
+}
+showTab('pulse');
+function uid(){ return 'x'+Math.random().toString(36).slice(2,9); }
+
+/* ==================== LIVE DATA FETCH ==================== */
+async function loadLiveData(){
+  try{
+    const [macroRes, marketsRes] = await Promise.all([
+      fetch('./data/macro_data.json').then(r=>r.json()).catch(()=>null),
+      fetch('./data/markets_data.json').then(r=>r.json()).catch(()=>null),
+    ]);
+    renderMacroBanner(macroRes);
+    renderLiveFeed(marketsRes);
+  }catch(e){
+    console.error('live data load failed', e);
+    document.getElementById('macroBanner').textContent = 'Could not load live data files yet.';
+  }
+}
+function renderMacroBanner(macro){
+  const el = document.getElementById('macroBanner');
+  if(!macro || !macro.updated){
+    el.textContent = 'No live data yet — the GitHub Action writes this after its first scheduled run (or trigger one manually from the Actions tab).';
+    return;
+  }
+  el.innerHTML = `
+    <div class="stat"><b>${macro.mortgage_rate_30yr ?? '—'}%</b>30yr Mortgage Rate</div>
+    <div class="stat"><b>${macro.home_price_index_yoy_pct ?? '—'}%</b>Home Price Index YoY</div>
+    <div class="stat"><b>${macro.national_unemployment_rate ?? '—'}%</b>National Unemployment</div>
+    <div class="synctime">Synced ${new Date(macro.updated).toLocaleString()}</div>
+  `;
+}
+function renderLiveFeed(data){
+  const note = document.getElementById('liveFeedNote');
+  const body = document.getElementById('liveFeedBody');
+  if(!data || !data.updated || !data.markets || !data.markets.length){
+    note.textContent = 'No live data yet.';
+    return;
+  }
+  note.textContent = `Last synced ${new Date(data.updated).toLocaleString()}`;
+  body.innerHTML = data.markets.map(m=>`
+    <tr>
+      <td>${m.name}, ${m.state}</td>
+      <td>${m.avg_rent ? '$'+Math.round(m.avg_rent).toLocaleString() : '—'}</td>
+      <td>${m.avg_price ? '$'+Math.round(m.avg_price).toLocaleString() : '—'}</td>
+      <td>${m.state_unemployment_rate ? m.state_unemployment_rate+'%' : '—'}</td>
+      <td>${m.population_growth_pct_yoy != null ? m.population_growth_pct_yoy+'%' : '—'}</td>
+    </tr>`).join('');
+}
+
+/* ==================== HEADLINE CAROUSEL (RSS) ==================== */
+let headlineItems = [];
+let headlineIdx = 0;
+let headlineTimer = null;
+
+async function loadHeadlines(){
+  const note = document.getElementById('headlinesNote');
+  try{
+    const res = await fetch('./data/rss_data.json').then(r=>r.json());
+    if(res && res.items && res.items.length){
+      headlineItems = res.items;
+      const sourceCount = new Set(headlineItems.map(i=>i.source)).size;
+      note.textContent = `Last synced ${new Date(res.updated).toLocaleString()} · ${headlineItems.length} stories from ${sourceCount} sources`;
+      renderHeadlineDots();
+      showHeadline(0);
+      startHeadlineRotation();
+    } else {
+      note.textContent = 'No headlines yet — runs after the first scheduled Action, or trigger one manually from the Actions tab.';
+    }
+  }catch(e){
+    note.textContent = 'No headlines yet.';
+  }
+}
+function renderHeadlineDots(){
+  document.getElementById('headlineDots').innerHTML = headlineItems.map((_,i)=>
+    `<span onclick="showHeadline(${i}); resetHeadlineRotation();"></span>`).join('');
+}
+function showHeadline(i){
+  headlineIdx = i;
+  const item = headlineItems[i];
+  const card = document.getElementById('headlineCard');
+  card.href = item.link || '#';
+  document.getElementById('headlineTitle').textContent = item.title || '(untitled)';
+  document.getElementById('headlineSummary').textContent = item.summary || '';
+  const when = item.published ? new Date(item.published).toLocaleDateString() : '';
+  document.getElementById('headlineMeta').textContent = `${item.source}${when ? ' · ' + when : ''} · click to read source`;
+  [...document.getElementById('headlineDots').children].forEach((d,idx)=>d.classList.toggle('active', idx===i));
+}
+function startHeadlineRotation(){
+  clearInterval(headlineTimer);
+  if(headlineItems.length < 2) return;
+  headlineTimer = setInterval(()=>{ showHeadline((headlineIdx+1) % headlineItems.length); }, 7000);
+}
+function resetHeadlineRotation(){ startHeadlineRotation(); }
+
+/* ==================== INSIGHTS (monthly AI-generated) ==================== */
+const FALLBACK_INSIGHT_CARDS = [
+  {title:"Where Cash Flow Still Works", body:"Midwest metros remain the clearest cash-flow plays: Cleveland, Indianapolis, Columbus, and Kansas City are cited for 8–12%+ gross yields with entry prices often under $200-250K. Birmingham and similar Alabama/Southeast markets pair low entry cost with very landlord-friendly law. Sun Belt metros (Charlotte, Dallas-Fort Worth, Nashville) trade some yield for stronger job and population growth.", sources:["Landlord Studio","Norada","Rent to Retirement"]},
+  {title:"Creative Financing Trend", body:"DSCR loans (qualifying on rental income, not personal income) have become the backbone of investor financing in 2026, especially for anyone scaling past conventional lending caps or buying through an LLC. Seller financing and lease-options remain useful, legitimate tools. Subject-to and wraparound deals still work mechanically but carry real due-on-sale and title risk — attorney-required, not YouTube-simple.", sources:["DSCR Capital Partners","TheClose","TurboTenant"]},
+  {title:"Remote Property Management", body:"About 17% of U.S. rental properties are owned by landlords who don't live in the same county. The gap that trips people up isn't finding a manager, it's visibility between visits. Current best practice: online rent collection with real-time payment history, a digital maintenance-request pipeline routed to vetted local vendors, and tenant-submitted quarterly photo walkthroughs rather than relying solely on an annual in-person inspection.", sources:["Perfect Tenant Innovation","HomeRiver Group","Baselane"]},
+  {title:"Landlord-Tenant Law Varies A Lot", body:"Don't assume NJ rules travel with you. Eviction timelines, security deposit caps, and notice requirements differ sharply by state — Alabama and Texas are consistently ranked very landlord-friendly with fast eviction processes; New York and Illinois are ranked strict and tenant-protective. This should weigh heavily in market selection, not just yield.", sources:["Norada","LawDepot","Leave The Key Homebuyers"]},
+];
+async function loadInsights(){
+  let data = null;
+  try{ data = await fetch('./data/insights_data.json').then(r=>r.json()); }catch(e){ /* fall through to defaults */ }
+  const cards = (data && data.cards && data.cards.length) ? data.cards : FALLBACK_INSIGHT_CARDS;
+  const note = document.getElementById('insightsNote');
+  note.textContent = (data && data.updated)
+    ? `Last refreshed ${new Date(data.updated).toLocaleString()}`
+    : 'Showing bundled default context — switches to AI-generated, web-researched insights after the first monthly run.';
+  document.getElementById('insightsGrid').innerHTML = cards.map(c=>`
+    <div class="pulse-card">
+      <h3>${c.title}</h3>
+      <p>${c.body}</p>
+      <div class="pulse-source">Sources: ${(c.sources||[]).join(', ')}</div>
+    </div>`).join('');
+}
+
+/* ==================== OPPORTUNITY / MARKET SCORECARD ==================== */
+const CRITERIA = [
+  {key:'yield', label:'Gross Rental Yield', dir:'high', weight:25},
+  {key:'landlord', label:'Landlord-Friendliness', dir:'high', weight:20},
+  {key:'jobGrowth', label:'Job Growth', dir:'high', weight:15},
+  {key:'popGrowth', label:'Population Growth', dir:'high', weight:15},
+  {key:'taxRate', label:'Property Tax Rate', dir:'low', weight:10},
+  {key:'ptr', label:'Price-to-Rent Ratio', dir:'low', weight:10},
+  {key:'insurance', label:'Insurance Cost', dir:'low', weight:5},
+];
+const DEFAULT_MARKETS = [
+  {name:'Cleveland', state:'OH', price:150000, rent:1350, jobGrowth:0.8, popGrowth:-1, landlord:7, taxRate:2.0, insurance:'Med'},
+  {name:'Indianapolis', state:'IN', price:220000, rent:1700, jobGrowth:1.4, popGrowth:8, landlord:9, taxRate:0.9, insurance:'Low'},
+  {name:'Columbus', state:'OH', price:260000, rent:1750, jobGrowth:1.6, popGrowth:10, landlord:7, taxRate:1.5, insurance:'Low'},
+  {name:'Kansas City', state:'MO', price:210000, rent:1550, jobGrowth:1.1, popGrowth:6, landlord:7, taxRate:1.0, insurance:'Med'},
+  {name:'Birmingham', state:'AL', price:170000, rent:1450, jobGrowth:0.9, popGrowth:3, landlord:9, taxRate:0.4, insurance:'Med'},
+  {name:'Tuscaloosa', state:'AL', price:190000, rent:1600, jobGrowth:1.0, popGrowth:5, landlord:9, taxRate:0.4, insurance:'Med'},
+  {name:'Charlotte', state:'NC', price:370000, rent:2100, jobGrowth:1.8, popGrowth:15, landlord:7, taxRate:0.8, insurance:'Low'},
+  {name:'Dallas-Fort Worth', state:'TX', price:340000, rent:2200, jobGrowth:2.0, popGrowth:14, landlord:9, taxRate:1.8, insurance:'High'},
+  {name:'Buffalo', state:'NY', price:200000, rent:1500, jobGrowth:0.5, popGrowth:0, landlord:3, taxRate:2.4, insurance:'Low'},
+  {name:'Philadelphia', state:'PA', price:230000, rent:1650, jobGrowth:0.6, popGrowth:2, landlord:4, taxRate:1.4, insurance:'Low'},
+];
+const INSUR_MAP = {Low:1, Med:2, High:3};
+let markets = [], weights = {}, sortKey='score', sortDir=-1;
+const MARKET_KEY = 'market-scorecard-v1';
+
+function loadMarkets(){
+  const saved = lsGet(MARKET_KEY);
+  if(saved){
+    markets = saved.markets || []; weights = saved.weights || {};
+    document.getElementById('marketStatus').textContent = 'Loaded your saved scorecard.';
+  } else {
+    markets = DEFAULT_MARKETS.map(m=>({...m,id:uid()}));
+    weights = Object.fromEntries(CRITERIA.map(c=>[c.key,c.weight]));
+    document.getElementById('marketStatus').textContent = 'Starting with example markets — edits save automatically.';
+  }
+  markets.forEach(m=>{ if(!m.id) m.id = uid(); });
+  renderMarkets();
+}
+function saveMarkets(){ lsSet(MARKET_KEY, {markets,weights}); }
+function resetWeights(){ weights = Object.fromEntries(CRITERIA.map(c=>[c.key,c.weight])); renderMarkets(); saveMarkets(); }
+function addMarket(){
+  markets.push({id:uid(), name:'New Market', state:'', price:200000, rent:1500, jobGrowth:1, popGrowth:1, landlord:6, taxRate:1.2, insurance:'Med'});
+  renderMarkets(); saveMarkets();
+}
+function deleteMarket(id){ markets = markets.filter(m=>m.id!==id); renderMarkets(); saveMarkets(); }
+function computeDerivedMarket(m){
+  const yieldPct = m.price>0 ? (m.rent*12/m.price)*100 : 0;
+  const ptr = m.rent>0 ? m.price/(m.rent*12) : 0;
+  return {...m, yield:yieldPct, ptr, insuranceVal: INSUR_MAP[m.insurance]||2};
+}
+function normalize(values, dir){
+  const min = Math.min(...values), max = Math.max(...values);
+  if(max===min) return values.map(()=>50);
+  return values.map(v=> dir==='high' ? ((v-min)/(max-min))*100 : ((max-v)/(max-min))*100 );
+}
+function scoreMarkets(){
+  const derived = markets.map(computeDerivedMarket);
+  const normByKey = {};
+  CRITERIA.forEach(c=>{
+    const vals = derived.map(d => c.key==='insurance' ? d.insuranceVal : d[c.key]);
+    normByKey[c.key] = normalize(vals, c.dir);
+  });
+  const totalW = CRITERIA.reduce((s,c)=> s+(Number(weights[c.key])||0), 0) || 1;
+  derived.forEach((d,i)=>{
+    let score = 0;
+    CRITERIA.forEach(c=>{ score += normByKey[c.key][i] * ((Number(weights[c.key])||0)/totalW); });
+    d.score = score;
+  });
+  return derived;
+}
+function renderMarketLedger(sorted){
+  const top = sorted.slice(0,5);
+  const maxScore = Math.max(...sorted.map(m=>m.score),1);
+  document.getElementById('ledgerRows').innerHTML = top.map((m,i)=>`
+    <div class="ledger-row">
+      <div class="folio">${String(i+1).padStart(2,'0')}</div>
+      <div class="ledger-name">${m.name}${m.state?', '+m.state:''}</div>
+      <div class="ledger-bar-track"><div class="ledger-bar-fill" style="width:${(m.score/maxScore)*100}%"></div></div>
+      <div class="ledger-score">${m.score.toFixed(1)}</div>
+    </div>`).join('');
+}
+function renderWeights(){
+  document.getElementById('weightsGrid').innerHTML = CRITERIA.map(c=>`
+    <div class="weight-item">
+      <label>${c.label} <span class="wval">${Number(weights[c.key]).toFixed(0)}</span></label>
+      <input type="range" min="0" max="100" value="${weights[c.key]}" oninput="updateWeight('${c.key}', this.value)">
+      <div class="dir">${c.dir==='high'?'Higher is better':'Lower is better'}</div>
+    </div>`).join('');
+  const total = CRITERIA.reduce((s,c)=>s+Number(weights[c.key]||0),0);
+  document.getElementById('weightTotal').textContent = `Total weight: ${total} (auto-normalized)`;
+}
+function updateWeight(key,val){ weights[key]=Number(val); renderMarkets(); saveMarkets(); }
+function renderMarketTable(sorted){
+  document.getElementById('marketBody').innerHTML = sorted.map((m,i)=>`
+    <tr class="${i<3?'top-row':''}">
+      <td><input value="${m.name}" onchange="updateMarketField('${m.id}','name',this.value)" style="min-width:120px"></td>
+      <td><input type="number" value="${m.price}" onchange="updateMarketField('${m.id}','price',Number(this.value))" style="width:85px"></td>
+      <td><input type="number" value="${m.rent}" onchange="updateMarketField('${m.id}','rent',Number(this.value))" style="width:70px"></td>
+      <td class="computed">${m.ptr.toFixed(1)}</td>
+      <td class="computed">${m.yield.toFixed(1)}%</td>
+      <td><input type="number" step="0.1" value="${m.jobGrowth}" onchange="updateMarketField('${m.id}','jobGrowth',Number(this.value))" style="width:55px">%</td>
+      <td><input type="number" step="0.1" value="${m.popGrowth}" onchange="updateMarketField('${m.id}','popGrowth',Number(this.value))" style="width:55px">%</td>
+      <td><input type="number" min="1" max="10" value="${m.landlord}" onchange="updateMarketField('${m.id}','landlord',Number(this.value))" style="width:45px">/10</td>
+      <td><input type="number" step="0.1" value="${m.taxRate}" onchange="updateMarketField('${m.id}','taxRate',Number(this.value))" style="width:55px">%</td>
+      <td><select onchange="updateMarketField('${m.id}','insurance',this.value)">
+        <option ${m.insurance==='Low'?'selected':''}>Low</option><option ${m.insurance==='Med'?'selected':''}>Med</option><option ${m.insurance==='High'?'selected':''}>High</option>
+      </select></td>
+      <td class="score-cell">${m.score.toFixed(1)}</td>
+      <td><button class="del-btn" onclick="deleteMarket('${m.id}')">✕</button></td>
+    </tr>`).join('');
+}
+function updateMarketField(id,field,value){
+  const m = markets.find(x=>x.id===id); if(!m) return;
+  m[field]=value; renderMarkets(); saveMarkets();
+}
+document.addEventListener('click', e=>{
+  if(e.target.closest('#marketTable th[data-key]')){
+    const key = e.target.closest('th').dataset.key;
+    if(sortKey===key) sortDir*=-1; else { sortKey=key; sortDir=-1; }
+    renderMarkets();
+  }
+});
+function renderMarkets(){
+  const derived = scoreMarkets();
+  const sorted = [...derived];
+  sorted.sort((a,b)=>{
+    const av=a[sortKey], bv=b[sortKey];
+    if(typeof av==='string') return sortDir===1 ? bv.localeCompare(av) : av.localeCompare(bv);
+    return sortDir===1 ? av-bv : bv-av;
+  });
+  renderMarketLedger([...derived].sort((a,b)=>b.score-a.score));
+  renderWeights();
+  renderMarketTable(sorted);
+}
+
+/* ==================== DEALS IN MOTION ==================== */
+const DEAL_STAGES = ['Researching','Analyzing','Offer Made','Under Contract','Closed'];
+const DEALS_KEY = 'dashboard-deals-v1';
+let deals = [];
+function loadDeals(){
+  const saved = lsGet(DEALS_KEY);
+  if(saved){ deals = saved; document.getElementById('dealStatus').textContent='Loaded your saved pipeline.'; }
+  else {
+    deals = [{id:uid(), name:'Indianapolis duplex (example)', market:'Indianapolis, IN', price:225000, cashFlow:280, financing:'DSCR loan', stage:'Researching', next:'Pull comps + call agent', notes:''}];
+    document.getElementById('dealStatus').textContent = 'One example deal to show the format — edit or delete freely.';
+  }
+  renderDeals();
+}
+function saveDeals(){ lsSet(DEALS_KEY, deals); }
+function addDeal(){
+  deals.push({id:uid(), name:'New Deal', market:'', price:0, cashFlow:0, financing:'', stage:'Researching', next:'', notes:''});
+  renderDeals(); saveDeals();
+}
+function deleteDeal(id){ deals = deals.filter(d=>d.id!==id); renderDeals(); saveDeals(); }
+function updateDealField(id, field, value){
+  const d = deals.find(x=>x.id===id); if(!d) return;
+  d[field] = value; saveDeals();
+}
+function renderDeals(){
+  document.getElementById('kanban').innerHTML = DEAL_STAGES.map(stage=>{
+    const items = deals.filter(d=>d.stage===stage);
+    return `<div class="kcol"><h4>${stage} <span>${items.length}</span></h4>${items.map(d=>`
+      <div class="kcard">
+        <div class="kcard-top">
+          <input value="${d.name}" onblur="updateDealField('${d.id}','name',this.value)" style="font-weight:600;">
+          <button class="kcard-del" onclick="deleteDeal('${d.id}')">✕</button>
+        </div>
+        <input value="${d.market}" placeholder="Market" onblur="updateDealField('${d.id}','market',this.value)">
+        <div class="krow">
+          <input type="number" value="${d.price}" placeholder="Price" onblur="updateDealField('${d.id}','price',Number(this.value))">
+          <input type="number" value="${d.cashFlow}" placeholder="Cash flow/mo" onblur="updateDealField('${d.id}','cashFlow',Number(this.value))">
+        </div>
+        <input value="${d.financing}" placeholder="Financing type" onblur="updateDealField('${d.id}','financing',this.value)">
+        <select onchange="updateDealField('${d.id}','stage',this.value); renderDeals();">
+          ${DEAL_STAGES.map(s=>`<option ${s===d.stage?'selected':''}>${s}</option>`).join('')}
+        </select>
+        <input value="${d.next}" placeholder="Next action" onblur="updateDealField('${d.id}','next',this.value)">
+        <textarea placeholder="Notes" onblur="updateDealField('${d.id}','notes',this.value)">${d.notes}</textarea>
+      </div>`).join('')}</div>`;
+  }).join('');
+}
+
+/* ==================== PORTFOLIO ==================== */
+const PORTFOLIO_KEY = 'dashboard-portfolio-v1';
+let properties = [];
+function loadPortfolio(){
+  const saved = lsGet(PORTFOLIO_KEY);
+  if(saved){ properties = saved; document.getElementById('portfolioStatus').textContent='Loaded your saved portfolio.'; }
+  else {
+    properties = [{
+      id:uid(), name:'1152 Romano Ave, Bellmawr, NJ', units:2, purchasePrice:310000, currentValue:335000,
+      mortgageBalance:240000, cashInvested:70000, monthlyRent:3000, monthlyPITI:2000, monthlyOther:400
+    }];
+    document.getElementById('portfolioStatus').textContent = 'Placeholder numbers for your Bellmawr duplex — replace with real figures.';
+  }
+  renderPortfolio();
+}
+function savePortfolio(){ lsSet(PORTFOLIO_KEY, properties); }
+function addProperty(){
+  properties.push({id:uid(), name:'New Property', units:1, purchasePrice:0, currentValue:0, mortgageBalance:0, cashInvested:0, monthlyRent:0, monthlyPITI:0, monthlyOther:0});
+  renderPortfolio(); savePortfolio();
+}
+function deleteProperty(id){ properties = properties.filter(p=>p.id!==id); renderPortfolio(); savePortfolio(); }
+function updatePropertyField(id, field, value){
+  const p = properties.find(x=>x.id===id); if(!p) return;
+  p[field] = value; renderPortfolio(); savePortfolio();
+}
+function fmtMoney(v){ return (v<0?'-':'')+'$'+Math.abs(Math.round(v)).toLocaleString(); }
+function renderPortfolio(){
+  let totalUnits=0, totalCF=0, totalEquity=0, totalCoC=[];
+  const rows = properties.map(p=>{
+    const cashFlow = p.monthlyRent - p.monthlyPITI - p.monthlyOther;
+    const equity = p.currentValue - p.mortgageBalance;
+    const coc = p.cashInvested>0 ? (cashFlow*12/p.cashInvested)*100 : 0;
+    totalUnits += Number(p.units)||0; totalCF += cashFlow; totalEquity += equity;
+    if(p.cashInvested>0) totalCoC.push(coc);
+    return `<tr>
+      <td><input value="${p.name}" onchange="updatePropertyField('${p.id}','name',this.value)" style="min-width:170px"></td>
+      <td><input type="number" value="${p.units}" onchange="updatePropertyField('${p.id}','units',Number(this.value))" style="width:45px"></td>
+      <td><input type="number" value="${p.purchasePrice}" onchange="updatePropertyField('${p.id}','purchasePrice',Number(this.value))" style="width:90px"></td>
+      <td><input type="number" value="${p.currentValue}" onchange="updatePropertyField('${p.id}','currentValue',Number(this.value))" style="width:90px"></td>
+      <td><input type="number" value="${p.mortgageBalance}" onchange="updatePropertyField('${p.id}','mortgageBalance',Number(this.value))" style="width:90px"></td>
+      <td><input type="number" value="${p.cashInvested}" onchange="updatePropertyField('${p.id}','cashInvested',Number(this.value))" style="width:85px"></td>
+      <td><input type="number" value="${p.monthlyRent}" onchange="updatePropertyField('${p.id}','monthlyRent',Number(this.value))" style="width:75px"></td>
+      <td><input type="number" value="${p.monthlyPITI}" onchange="updatePropertyField('${p.id}','monthlyPITI',Number(this.value))" style="width:75px"></td>
+      <td><input type="number" value="${p.monthlyOther}" onchange="updatePropertyField('${p.id}','monthlyOther',Number(this.value))" style="width:75px"></td>
+      <td class="computed ${cashFlow<0?'neg':''}">${fmtMoney(cashFlow)}</td>
+      <td class="computed">${fmtMoney(equity)}</td>
+      <td class="computed ${coc<0?'neg':''}">${p.cashInvested>0 ? coc.toFixed(1)+'%' : '—'}</td>
+      <td><button class="del-btn" onclick="deleteProperty('${p.id}')">✕</button></td>
+    </tr>`;
+  }).join('');
+  document.getElementById('portfolioBody').innerHTML = rows;
+  const avgCoC = totalCoC.length ? totalCoC.reduce((a,b)=>a+b,0)/totalCoC.length : 0;
+  document.getElementById('summaryGrid').innerHTML = `
+    <div class="summary-card"><div class="label">Properties</div><div class="value">${properties.length}</div></div>
+    <div class="summary-card"><div class="label">Total Units</div><div class="value">${totalUnits}</div></div>
+    <div class="summary-card"><div class="label">Monthly Cash Flow</div><div class="value ${totalCF<0?'neg':''}">${fmtMoney(totalCF)}</div></div>
+    <div class="summary-card"><div class="label">Annual Cash Flow</div><div class="value ${totalCF<0?'neg':''}">${fmtMoney(totalCF*12)}</div></div>
+    <div class="summary-card"><div class="label">Total Equity</div><div class="value">${fmtMoney(totalEquity)}</div></div>
+    <div class="summary-card"><div class="label">Avg Cash-on-Cash</div><div class="value">${avgCoC.toFixed(1)}%</div></div>
+  `;
+}
+
+loadLiveData();
+loadHeadlines();
+loadInsights();
+loadMarkets();
+loadDeals();
+loadPortfolio();
+</script>
+</body>
+</html>
