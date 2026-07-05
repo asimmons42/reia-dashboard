@@ -1,4 +1,49 @@
 {
-  "updated": null,
-  "cards": []
+  "updated": "2026-07-05T03:08:58.876993+00:00",
+  "cards": [
+    {
+      "title": "Best U.S. Metro Markets for Cash Flow in 2025\u20132026",
+      "body": "Midwestern and secondary Sun Belt metros continue to dominate cash-flow rankings for buy-and-hold investors because lower home prices relative to rents produce the highest gross yields. Indianapolis stands out as a top pick, with capitalization rates of 7\u20138.5% and rental yields of 5.5\u20136.5%, underpinned by a diversified economy, a median home price roughly 24% below the national average, and low vacancy rates of 5\u20137%. Cleveland offers average purchase prices around $125,000\u2014about 65% below the national average\u2014with rents averaging $1,200 and approximately 59% of households choosing to rent, creating a deep tenant pool. Birmingham benefits from a diversified aerospace, bioscience, and healthcare economy and ranks third in cost of living nationally. Tampa provides a blend of cash flow and appreciation, with cap rates of 5.5\u20137% and annual rent growth of 4\u20136%, supported by strong in-migration from northern states. Toledo leads Midwestern markets in pure yield potential, while Kansas City and Memphis regularly meet or exceed the 1% rent-to-price rule that cash-flow investors target.",
+      "sources": [
+        "Dominion Financial Services",
+        "RealWealth",
+        "PropertyScout360",
+        "Rentometer"
+      ]
+    },
+    {
+      "title": "State of Creative Financing for Investors in 2025\u20132026",
+      "body": "DSCR (Debt Service Coverage Ratio) loans have become the dominant creative financing tool for rental investors, described by one industry executive as \"the product of the year\" and now accounting for roughly 28\u201329% of all non-QM originations by volume. Because DSCR loans underwrite based on the property's rental income rather than the borrower's personal income or tax returns, they are especially valuable for self-employed investors and portfolio builders seeking to scale past the 6\u201310 property limit imposed by conventional lenders. In 2025, DSCR originations grew nearly 35% year-over-year, and the passage of the One Big Beautiful Bill on July 4, 2025, which reinstated 100% bonus depreciation, is expected to fuel investor demand further. Seller financing and lease-options remain viable but require a real estate attorney given state-specific regulation. Subject-to transactions\u2014where a buyer takes over the seller's existing mortgage\u2014are legal in most states but trigger the due-on-sale clause in nearly every mortgage, making them higher risk. Most successful investors combine three to four strategies, typically using a DSCR loan as the long-term anchor paired with bridge or hard-money financing for acquisition and rehab, then refinancing into DSCR once the property is stabilized.",
+      "sources": [
+        "HousingWire",
+        "DSCR Capital Partners",
+        "Griffin Funding",
+        "RCN Capital",
+        "Biz2Credit"
+      ]
+    },
+    {
+      "title": "Best Practices for Remote Out-of-State Property Management",
+      "body": "Successfully managing rental property from out of state hinges on three pillars: a reliable local team, modern technology, and rigorous tenant screening. Hiring a local property manager\u2014typically at 8\u201312% of monthly rent\u2014is the single most important step, as they handle on-the-ground showings, coordinate maintenance with vetted contractors, ensure compliance with state and municipal landlord-tenant laws, and keep vacancy periods short. Technology closes the remaining gaps: property management platforms such as AppFolio and Buildium automate rent collection, track maintenance requests in real time, and store leases and financial records in the cloud, while smart-home devices like digital locks, remote thermostats, and security cameras allow passive monitoring without intrusive oversight. Thorough tenant screening\u2014covering credit, rental history, employment, and background checks\u2014is even more critical for remote owners who cannot easily respond to problems in person. Investors should also consult a tax professional familiar with multi-state real estate, since owning properties across state lines complicates income-tax filing and reporting obligations. Periodic in-person visits remain advisable even with the best systems in place.",
+      "sources": [
+        "Belong Home",
+        "Baselane",
+        "Real Property Management",
+        "Redfin",
+        "LawDepot"
+      ]
+    },
+    {
+      "title": "Landlord-Tenant Law Friendliness by State: What Investors Need to Know",
+      "body": "State landlord-tenant law varies dramatically and directly affects an investor's ability to enforce leases, raise rents, and reclaim units\u2014making it a critical underwriting variable for out-of-state buyers. Texas, Florida, Arizona, Georgia, Indiana, and Ohio consistently rank as the most landlord-friendly states: Texas allows a three-day notice to vacate for nonpayment and completes evictions in as little as three to six weeks, Florida preempts local rent control statewide and charges property taxes averaging just 0.89% of value, Arizona can complete uncontested evictions in as few as five days, and Georgia's eviction process often resolves in one to two weeks with no rent control and property taxes of only 0.83%. By contrast, states like New York and New Jersey impose strict rent stabilization and rent control regimes, and New York evictions can take six to twelve months. New Jersey, where many of this investor's current holdings likely sit, has strong tenant protections against steep rent increases, which is a primary motivation for expanding into friendlier markets. Investors should note that even within landlord-friendly states, individual cities can add rent registration requirements or stricter notice rules, so confirming local ordinances before closing is essential.",
+      "sources": [
+        "LeaseRunner",
+        "TurboTenant",
+        "Steadily",
+        "RealWealth",
+        "Innago",
+        "Redfin"
+      ]
+    }
+  ]
 }
