@@ -101,6 +101,15 @@
   .headline-dots{display:flex;gap:6px;margin-top:12px;}
   .headline-dots span{width:6px;height:6px;border-radius:50%;background:rgba(216,189,138,0.35);cursor:pointer;display:inline-block;}
   .headline-dots span.active{background:var(--brass);}
+  .resource-cat{margin-bottom:22px;}
+  .resource-cat h3{font-family:'Source Serif 4',serif;font-size:16px;margin:0 0 4px;color:var(--paper);}
+  .resource-cat .cat-note{color:var(--muted);font-size:12px;margin-bottom:10px;}
+  .resource-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;}
+  .resource-card{display:block;background:var(--paper);color:var(--slate);border-radius:4px;padding:12px 14px;text-decoration:none;transition:opacity .2s;}
+  .resource-card:hover{opacity:0.9;}
+  .resource-card .rname{font-weight:600;font-size:13px;margin-bottom:3px;}
+  .resource-card .rdesc{font-size:11.5px;color:#4b5563;line-height:1.4;}
+  .resource-card .rtag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;color:var(--forest);margin-top:5px;}
 </style>
 </head>
 <body>
@@ -220,6 +229,63 @@
     <div class="status" id="portfolioStatus"></div>
   </div>
 
+  <div class="tabcontent" id="tab-resources">
+    <div class="section-title">Resources</div>
+    <div class="section-note">Free/low-cost places to look yourself — no API integration, just quick jump-off points. Opens in a new tab.</div>
+
+    <div class="resource-cat">
+      <h3>National Listings</h3>
+      <div class="cat-note">General inventory, for comps and browsing.</div>
+      <div class="resource-grid">
+        <a class="resource-card" href="https://www.zillow.com" target="_blank" rel="noopener"><div class="rname">Zillow</div><div class="rdesc">Largest general listings site; good for comps and Zestimate context.</div></a>
+        <a class="resource-card" href="https://www.realtor.com" target="_blank" rel="noopener"><div class="rname">Realtor.com</div><div class="rdesc">MLS-sourced, tends to be more current on status changes.</div></a>
+        <a class="resource-card" href="https://www.redfin.com" target="_blank" rel="noopener"><div class="rname">Redfin</div><div class="rdesc">Good filters, redfin estimate, and sold-comp history.</div></a>
+        <a class="resource-card" href="https://www.homes.com" target="_blank" rel="noopener"><div class="rname">Homes.com</div><div class="rdesc">Secondary listings aggregator, sometimes surfaces things others miss.</div></a>
+      </div>
+    </div>
+
+    <div class="resource-cat">
+      <h3>Foreclosures, REO &amp; Auctions</h3>
+      <div class="cat-note">Government/GSE-owned inventory and public auctions — often priced below market.</div>
+      <div class="resource-grid">
+        <a class="resource-card" href="https://www.hudhomestore.gov" target="_blank" rel="noopener"><div class="rname">HUD Home Store</div><div class="rdesc">FHA-foreclosed homes sold by the government. Bids submitted online.</div><span class="rtag">free</span></a>
+        <a class="resource-card" href="https://www.homepath.fanniemae.com" target="_blank" rel="noopener"><div class="rname">Fannie Mae HomePath</div><div class="rdesc">Fannie-owned REOs. First 30 days reserved for owner-occupants; investors can bid after.</div><span class="rtag">free</span></a>
+        <a class="resource-card" href="https://www.freddiemac.com/homesteps" target="_blank" rel="noopener"><div class="rname">Freddie Mac HomeSteps</div><div class="rdesc">Freddie's equivalent REO marketplace.</div><span class="rtag">free</span></a>
+        <a class="resource-card" href="https://www.auction.com" target="_blank" rel="noopener"><div class="rname">Auction.com</div><div class="rdesc">Foreclosure &amp; bank-owned auctions nationwide, online bidding.</div></a>
+        <a class="resource-card" href="https://www.realtytrac.com" target="_blank" rel="noopener"><div class="rname">RealtyTrac</div><div class="rdesc">Foreclosure and pre-foreclosure database, county-level detail.</div></a>
+        <a class="resource-card" href="https://www.foreclosure.com" target="_blank" rel="noopener"><div class="rname">Foreclosure.com</div><div class="rdesc">Foreclosure listings incl. some sheriff-sale data, subscription for full detail.</div></a>
+      </div>
+      <div class="cat-note" style="margin-top:8px;">Sheriff sales specifically are run county-by-county with no single national feed — search "[county name] sheriff sale" or "[county] sheriff's office real estate" for the specific county in a target market; most post upcoming sale lists directly on the county sheriff's website.</div>
+    </div>
+
+    <div class="resource-cat">
+      <h3>Off-Market Deal Sourcing</h3>
+      <div class="cat-note">Deals that never hit the MLS — wholesalers, motivated sellers, direct outreach.</div>
+      <div class="resource-grid">
+        <a class="resource-card" href="https://www.biggerpockets.com/marketplace" target="_blank" rel="noopener"><div class="rname">BiggerPockets Marketplace</div><div class="rdesc">Off-market and wholesaler-listed deals, investor-to-investor.</div></a>
+        <a class="resource-card" href="https://www.dealmachine.com" target="_blank" rel="noopener"><div class="rname">DealMachine</div><div class="rdesc">Driving-for-dollars app + skip tracing to find and contact off-market owners.</div><span class="rtag">paid</span></a>
+        <a class="resource-card" href="https://www.propstream.com" target="_blank" rel="noopener"><div class="rname">PropStream</div><div class="rdesc">Owner/skip-trace data, distressed property lists, list-building for direct mail.</div><span class="rtag">paid</span></a>
+        <a class="resource-card" href="https://www.facebook.com/marketplace" target="_blank" rel="noopener"><div class="rname">Facebook Marketplace + local REI groups</div><div class="rdesc">Search local investor groups by market — wholesalers post here constantly.</div><span class="rtag">free</span></a>
+        <a class="resource-card" href="https://www.craigslist.org" target="_blank" rel="noopener"><div class="rname">Craigslist</div><div class="rdesc">Still surprisingly active for FSBO and "must sell" listings in secondary markets.</div><span class="rtag">free</span></a>
+      </div>
+    </div>
+
+    <div class="resource-cat">
+      <h3>Financing &amp; Lenders</h3>
+      <div class="cat-note">Beyond conventional 25%-down investor loans.</div>
+      <div class="resource-grid">
+        <a class="resource-card" href="https://www.lendingone.com" target="_blank" rel="noopener"><div class="rname">LendingOne</div><div class="rdesc">DSCR &amp; rental loans, qualifies on property cash flow not personal income.</div></a>
+        <a class="resource-card" href="https://www.kiavi.com" target="_blank" rel="noopener"><div class="rname">Kiavi</div><div class="rdesc">Fix-and-flip and DSCR rental loans, fast close, investor-focused.</div></a>
+        <a class="resource-card" href="https://www.visiolending.com" target="_blank" rel="noopener"><div class="rname">Visio Lending</div><div class="rdesc">DSCR loans for single-family and small multifamily rentals.</div></a>
+        <a class="resource-card" href="https://www.corevestfinance.com" target="_blank" rel="noopener"><div class="rname">CoreVest</div><div class="rdesc">Portfolio and bridge loans for investors scaling past a few doors.</div></a>
+        <a class="resource-card" href="https://www.rcnfunding.com" target="_blank" rel="noopener"><div class="rname">RCN Capital</div><div class="rdesc">Hard money / bridge lending for rehab &amp; BRRRR deals.</div></a>
+        <a class="resource-card" href="https://www.groundfloor.us" target="_blank" rel="noopener"><div class="rname">Groundfloor</div><div class="rdesc">Short-term rehab lending; also a place to raise capital as a borrower from individual lenders.</div></a>
+      </div>
+    </div>
+
+    <div class="refresh-note">This tab is static — a curated jump-off list, not pulled live. Tell me when sources go stale or you find better ones and I'll update it.</div>
+  </div>
+
 </div>
 
 <script>
@@ -233,6 +299,7 @@ const TABS = [
   {id:'opportunity', label:'Opportunity Analysis'},
   {id:'deals', label:'Deals in Motion'},
   {id:'portfolio', label:'Portfolio'},
+  {id:'resources', label:'Resources'},
 ];
 document.getElementById('tabNav').innerHTML = TABS.map((t,i)=>
   `<button class="${i===0?'active':''}" onclick="showTab('${t.id}')" id="navbtn-${t.id}">${t.label}</button>`).join('');
