@@ -1,9 +1,9 @@
 {
-  "updated": "2026-08-03T18:59:39.968800+00:00",
-  "mortgage_rate_30yr": "6.66",
-  "mortgage_rate_date": "2026-07-30",
-  "national_unemployment_rate": "4.2",
-  "national_unemployment_date": "2026-06-01",
+  "updated": "2026-08-10T16:10:19.321126+00:00",
+  "mortgage_rate_30yr": "6.69",
+  "mortgage_rate_date": "2026-08-06",
+  "national_unemployment_rate": "4.1",
+  "national_unemployment_date": "2026-07-01",
   "home_price_index_yoy_pct": 1.11,
   "home_price_index_date": "2026-05-01"
 }
