@@ -1,47 +1,89 @@
 {
-  "updated": "2026-09-07T18:02:40.604901+00:00",
+  "updated": "2026-09-14T18:16:40.783854+00:00",
   "items": [
+    {
+      "title": "Ameritrust sues investors, brokers over $14M loss in Baltimore fraud scheme",
+      "link": "https://www.housingwire.com/articles/ameritrust-mortgage-sues-over-14m-baltimore-dscr-fraud-scheme/",
+      "source": "HousingWire",
+      "published": "2026-09-14T17:51:56+00:00",
+      "summary": "Lender says alleged scheme used 300% markups, prepackaged appraisals and title gaps"
+    },
+    {
+      "title": "HomeSmart signs marketing agreement with loanDepot",
+      "link": "https://www.housingwire.com/articles/homesmart-loandepot-marketing-services-agreement/",
+      "source": "HousingWire",
+      "published": "2026-09-14T17:35:31+00:00",
+      "summary": "Co-marketing deal gives HomeSmart agents a direct channel to loanDepot\u2019s offerings"
+    },
+    {
+      "title": "StreetEasy changes Experts rules and lowers success fees",
+      "link": "https://www.housingwire.com/articles/streeteasy-experts-cap-success-fees/",
+      "source": "HousingWire",
+      "published": "2026-09-14T17:26:55+00:00",
+      "summary": "New rules pause additions from any brokerage at 20% or more of Experts, and reduce fees to 15% and 20% at lower price tiers"
+    },
+    {
+      "title": "First American expands no-cost property title monitoring",
+      "link": "https://www.housingwire.com/articles/first-american-expands-no-cost-property-title-monitoring/",
+      "source": "HousingWire",
+      "published": "2026-09-14T17:21:55+00:00",
+      "summary": "According to the FBI, cybercrime-related losses reached $20.9 billion that year"
+    },
+    {
+      "title": "How to Refinance a HELOC Into a Fixed-Rate Home Equity Loan",
+      "link": "https://themortgagereports.com/133830/refinance-heloc-fixed-rate-home-equity-loan",
+      "source": "The Mortgage Reports",
+      "published": "2026-09-14T16:00:00+00:00",
+      "summary": "Worried about a rising HELOC payment? Learn the main ways to convert or refinance a variable-rate HELOC into a fixed rate \u2014 and when each..."
+    },
+    {
+      "title": "I Started Buying Rentals at 46. By 50, They\u2019ll Replace My Salary.",
+      "link": "https://www.biggerpockets.com/blog/real-estate-1330",
+      "source": "BiggerPockets Blog",
+      "published": "2026-09-14T11:00:58+00:00",
+      "summary": "Kent Long wanted passive income. The problem? All those gurus and guides online were only selling a fantasy. The one thing that seemed to actually generate income: real estate. When [&#8230;]"
+    },
+    {
+      "title": "Two Rentals, $3,000 Each: The Guide to Closing with Close-to-Nothing",
+      "link": "https://www.biggerpockets.com/blog/rookie-770",
+      "source": "BiggerPockets Blog",
+      "published": "2026-09-14T11:00:30+00:00",
+      "summary": "You don&#8217;t have to live near your rental, or bring a huge check to closing, to build a real estate portfolio. Today\u2019s guest closed both her deals with only $3,000 [&#8230;]"
+    },
+    {
+      "title": "The Fed Decides This Week: Will Mortgage Rates Drop or Stay Put?",
+      "link": "https://themortgagereports.com/134169/fed-rate-decision-september-2026-mortgage-rates",
+      "source": "The Mortgage Reports",
+      "published": "2026-09-11T16:00:48+00:00",
+      "summary": "Key Takeaways Markets are watching to see if the Fed changes course on rates Mortgage rates are currently averaging 6.76% for a 30-year fixed Watch for updates to the Fed&#x27;s [&#8230;]"
+    },
+    {
+      "title": "How the Government Pays You to Buy a Short-Term Rental",
+      "link": "https://www.biggerpockets.com/blog/how-the-government-pays-you-to-buy-a-short-term-rental",
+      "source": "BiggerPockets Blog",
+      "published": "2026-09-11T14:56:15+00:00",
+      "summary": "I spent eight years touring as a producer, with platinum records on the wall and almost nothing in the bank, which sounds like the setup to a country song but [&#8230;]"
+    },
+    {
+      "title": "Should You Keep or Sell a Rental Property That Needs Work? (Rookie Reply)",
+      "link": "https://www.biggerpockets.com/blog/rookie-769",
+      "source": "BiggerPockets Blog",
+      "published": "2026-09-11T11:56:10+00:00",
+      "summary": "Your first rental cash flows just fine, but it needs some work, and in order to scale your portfolio, the next big decision hits: Should you hold and repair, or [&#8230;]"
+    },
+    {
+      "title": "Fannie & Freddie Now Accept VantageScore From Any Lender",
+      "link": "https://themortgagereports.com/134153/vantagescore-fannie-freddie-all-lenders",
+      "source": "The Mortgage Reports",
+      "published": "2026-09-09T21:57:13+00:00",
+      "summary": "Fannie and Freddie now accept VantageScore 4.0 from any lender. Who it helps, who it doesn't, and what to check on your own application."
+    },
     {
       "title": "Home Equity Loans for Seniors: Options and Requirements",
       "link": "https://themortgagereports.com/133821/home-equity-loans-for-seniors",
       "source": "The Mortgage Reports",
       "published": "2026-09-07T16:00:00+00:00",
       "summary": "Can seniors qualify for a home equity loan? See how lenders treat Social Security and compare home equity loans with HELOCs and reverse mortgages."
-    },
-    {
-      "title": "Can tech keep agents out of trouble for listing mistakes?",
-      "link": "https://www.housingwire.com/articles/tech-avoid-marketing-misrepresentation/",
-      "source": "HousingWire",
-      "published": "2026-09-07T14:55:00+00:00",
-      "summary": "LiDAR measurements and 3D tours can back up square footage and limit misleading AI edited listing photos."
-    },
-    {
-      "title": "Truss Financial scales hybrid model with new direct lending platform",
-      "link": "https://www.housingwire.com/articles/truss-financial-direct-lending-non-qm-dscr-heloc/",
-      "source": "HousingWire",
-      "published": "2026-09-07T13:00:00+00:00",
-      "summary": "Truss is adding in-house underwriting and funding to cut turn times"
-    },
-    {
-      "title": "Florida\u2019s housing market looks shaky. Orlando tells a more complicated story",
-      "link": "https://www.housingwire.com/articles/floridas-housing-market-looks-shaky-orlando-tells-a-more-complicated-story/",
-      "source": "HousingWire",
-      "published": "2026-09-07T13:00:00+00:00",
-      "summary": "For buyers outside the vacation segment, affordability remains a central concern"
-    },
-    {
-      "title": "FSBO.com rolls out tech platform to streamline home purchase agreements",
-      "link": "https://www.housingwire.com/articles/fsbocom-launches-pact-digital-offer-to-contract-platform/",
-      "source": "HousingWire",
-      "published": "2026-09-07T12:00:00+00:00",
-      "summary": "Developed from technology first built at Homepie, PACT is part of FSBO.com\u2019s broader effort to digitize transactions from listing through closing"
-    },
-    {
-      "title": "JPMorgan\u2019s $750B Bet on the Housing Market",
-      "link": "https://www.biggerpockets.com/blog/real-estate-1327",
-      "source": "BiggerPockets Blog",
-      "published": "2026-09-07T11:00:17+00:00",
-      "summary": "JPMorgan Chase, America\u2019s largest bank, just made a big bet on housing\u2014a $750B bet to be exact. At a time when most people hope home prices will fall, JPMorgan is [&#8230;]"
     },
     {
       "title": "What the NWMLS settlement really tells us about the future of real estate marketing",
@@ -70,48 +112,6 @@
       "source": "Inman",
       "published": "2026-09-04T15:15:41+00:00",
       "summary": "Remembering Gloria Steinem through the home that nurtured the feminist movement \u2014 where history was made one gathering at a time."
-    },
-    {
-      "title": "How to Buy Your First Multifamily Rental With Low Money (Rookie Reply)",
-      "link": "https://www.biggerpockets.com/blog/rookie-766",
-      "source": "BiggerPockets Blog",
-      "published": "2026-09-04T11:00:36+00:00",
-      "summary": "You\u2019ve picked an investing strategy, you\u2019ve studied your market, but now you need the money to get started. You\u2019re not alone, as this is perhaps the most common hurdle for [&#8230;]"
-    },
-    {
-      "title": "9 \u201cBoring\u201d Investing Habits That Will Actually Make You Rich",
-      "link": "https://www.biggerpockets.com/blog/real-estate-1326",
-      "source": "BiggerPockets Blog",
-      "published": "2026-09-04T11:00:15+00:00",
-      "summary": "The top 1% of real estate investors don\u2019t have a \u201csecret\u201d market, a \u201cbetter\u201d investing strategy, or access to \u201cexclusive\u201d resources. They just do nine things better than most other [&#8230;]"
-    },
-    {
-      "title": "Getting a Mortgage in Your 70s or 80s: Is There Really an Age Limit?",
-      "link": "https://themortgagereports.com/134074/getting-a-mortgage-in-your-70s-or-80s",
-      "source": "The Mortgage Reports",
-      "published": "2026-09-03T15:55:06+00:00",
-      "summary": "If you're in your 70s or 80s and thinking about buying a home or refinancing, you've probably wondered whether a lender will look at your age"
-    },
-    {
-      "title": "Gray Divorce at 65+: How the Refinance Buyout Works and How a Retiree Qualifies Solo",
-      "link": "https://themortgagereports.com/134062/gray-divorce-refinance-buyout-qualifying-solo",
-      "source": "The Mortgage Reports",
-      "published": "2026-09-03T15:55:01+00:00",
-      "summary": "Divorcing at 65+ and keeping the house? Here's how the refinance buyout removes your ex from the loan, and how a retiree qualifies solo..."
-    },
-    {
-      "title": "Property-Tax Deferral vs. a Reverse Mortgage: The Lien-Priority Conflict That Can Block One or the Other",
-      "link": "https://themortgagereports.com/134058/property-tax-deferral-vs-reverse-mortgage",
-      "source": "The Mortgage Reports",
-      "published": "2026-09-03T15:54:58+00:00",
-      "summary": "You are on a fixed income, the property-tax bill keeps climbing, and you have found two ways to ease the pressure: your state or county might"
-    },
-    {
-      "title": "AI-Fueled Mini Housing Bubbles Form as Commercial Delinquencies Rise",
-      "link": "https://www.biggerpockets.com/blog/on-the-market-457",
-      "source": "BiggerPockets Blog",
-      "published": "2026-09-03T11:00:44+00:00",
-      "summary": "AI is bringing 6,000 jobs to a small Texan town, and home prices are seeing a sizable jump\u2026but what happens once the job is done? Is this just a mini [&#8230;]"
     },
     {
       "title": "This is the End and a New Beginning",
