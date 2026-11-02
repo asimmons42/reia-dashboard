@@ -1,26 +1,110 @@
 {
-  "updated": "2026-10-26T18:57:19.264137+00:00",
+  "updated": "2026-11-02T22:01:58.223681+00:00",
   "items": [
     {
-      "title": "Could a pullback in Medicare Advantage plans boost reverse mortgages?",
-      "link": "https://www.housingwire.com/articles/medicare-advantage-2027-reverse-mortgages/",
+      "title": "A $20M fine stalks Los Angeles over delay of a new housing project",
+      "link": "https://www.housingwire.com/articles/mountain-lion-housing-law-fight/",
       "source": "HousingWire",
-      "published": "2026-10-26T18:47:21+00:00",
-      "summary": "With fewer Medicare Advantage plans available in 2027, seniors may look to their home equity to offset rising expenses"
+      "published": "2026-11-02T21:33:57+00:00",
+      "summary": "Developer counsel says denial violates AB 2011 and the Housing Accountability Act and argues for damages for missed deadlines"
     },
     {
-      "title": "Everything we know so far about Open Real Estate",
-      "link": "https://www.housingwire.com/articles/open-real-estate-initiative/",
+      "title": "Real estate is moving toward more data privacy. Appraisers say UAD 3.6 is moving the other way",
+      "link": "https://www.housingwire.com/articles/uad-36-certification-25/",
       "source": "HousingWire",
-      "published": "2026-10-26T18:11:42+00:00",
-      "summary": "Leaders say local MLS governance remains in place as Open Real Estate prepares for a Q1 2027 rollout"
+      "published": "2026-11-02T21:27:44+00:00",
+      "summary": "Certification 25 expands who can store, analyze, and distribute appraisal report data, including interior photos"
     },
     {
-      "title": "ENRG Realty appoints Eric Hauser as SVP of growth",
-      "link": "https://www.housingwire.com/articles/enrg-realty-appoints-eric-hauser-as-svp-of-growth/",
+      "title": "Could dual licensing grow as agents, LOs seek revenue opportunities?",
+      "link": "https://www.housingwire.com/articles/retr-dual-license-analysis/",
       "source": "HousingWire",
-      "published": "2026-10-26T17:45:57+00:00",
-      "summary": "Hauser will focus on expanding ENRG's national presence"
+      "published": "2026-11-02T20:36:34+00:00",
+      "summary": "RETR identified 3,729 agent and loan officer name matches, with 40% in California"
+    },
+    {
+      "title": "Open Real Estate gets a boost from independents \u2014 and an opening from MLSs",
+      "link": "https://www.housingwire.com/articles/open-real-estate-826-letters/",
+      "source": "HousingWire",
+      "published": "2026-11-02T19:00:00+00:00",
+      "summary": "Independent firms account for 493 letters, or 59%, the group said on Monday"
+    },
+    {
+      "title": "What Credit Score Do You Need for a Home Equity Loan?",
+      "link": "https://themortgagereports.com/135020/credit-score-for-home-equity-loan",
+      "source": "The Mortgage Reports",
+      "published": "2026-11-02T18:10:55+00:00",
+      "summary": "Wondering what credit score you need for a home equity loan? See the typical score ranges lenders look for, what else matters, and how to..."
+    },
+    {
+      "title": "How \u201cVibe\u201d Investing Made Me $57,000 in Real Estate",
+      "link": "https://www.biggerpockets.com/blog/real-estate-1351",
+      "source": "BiggerPockets Blog",
+      "published": "2026-11-02T12:00:28+00:00",
+      "summary": "When Obi Johns was a teenager, he saw his parents do something remarkable: they sold their home and made $150,000 from market appreciation alone. But then, months later, the investor [&#8230;]"
+    },
+    {
+      "title": "2 Duplexes Will Fund My Retirement (That\u2019s It!)",
+      "link": "https://www.biggerpockets.com/blog/rookie-791",
+      "source": "BiggerPockets Blog",
+      "published": "2026-11-02T12:00:27+00:00",
+      "summary": "Two duplexes, four rental units\u2014that\u2019s all Erik Caci needs to retire comfortably. Most real estate rookies aim to buy 10, maybe even 20, rentals. But for Erik, just two in [&#8230;]"
+    },
+    {
+      "title": "Jeff Glover goes indie after 17 years with Keller Williams (EXCLUSIVE)",
+      "link": "https://www.inman.com/2026/11/01/jeff-glover-takes-glover-agency-independent/",
+      "source": "Inman",
+      "published": "2026-11-01T16:01:01+00:00",
+      "summary": "Jeff Glover takes Glover Agency independent after 17 years with Keller Williams, telling Inman the move is about keeping Glover U broker-agnostic."
+    },
+    {
+      "title": "7 ways to breathe new life into a listing that isn\u2019t selling",
+      "link": "https://www.inman.com/2026/11/01/listing-not-selling-try-these-7-moves/",
+      "source": "Inman",
+      "published": "2026-11-01T08:00:59+00:00",
+      "summary": "Don\u2019t jump straight to a price cut when you have a listing not selling. These seven strategies refresh your marketing and put it in front of new buyers."
+    },
+    {
+      "title": "Why real estate agents wanted Barbara Corcoran for ICNY \u201927",
+      "link": "https://www.inman.com/2026/10/30/why-real-estate-agents-wanted-barbara-corcoran-for-icny-27/",
+      "source": "Inman",
+      "published": "2026-10-30T18:43:58+00:00",
+      "summary": "Agents overwhelmingly asked to hear from Barbara Corcoran at Inman Connect New York. Here\u2019s why her scrappy, no-agenda advice matters in a tough market."
+    },
+    {
+      "title": "What real estate agents should watch on Election Day, per NAHB",
+      "link": "https://www.inman.com/2026/10/30/housing-and-the-midterms/",
+      "source": "Inman",
+      "published": "2026-10-30T18:00:43+00:00",
+      "summary": "NAHB\u2019s Ken Wingert on housing and the midterms, from state ballot measures and the ROAD to Housing Act to tariffs, labor and mortgage rates."
+    },
+    {
+      "title": "What a Property Manager Really Costs (and How to Self-Manage for Less)",
+      "link": "https://www.biggerpockets.com/blog/what-a-property-manager-really-costs-and-how-to-self-manage-for-less",
+      "source": "BiggerPockets Blog",
+      "published": "2026-10-30T16:42:45+00:00",
+      "summary": "This article is presented by Avail. Most property management pitches open with one number: 8%. Maybe 9%. 10% if they have a really nice logo to show off. It&#8217;s a [&#8230;]"
+    },
+    {
+      "title": "Is the Housing Market About to Crash? What the Data (Actually) Shows",
+      "link": "https://www.biggerpockets.com/blog/real-estate-1350",
+      "source": "BiggerPockets Blog",
+      "published": "2026-10-30T11:00:20+00:00",
+      "summary": "Is the housing market going to crash? Everywhere you turn, there seems to be another headline forecasting the next housing market meltdown. But what\u2019s behind all the noise? Actual data? [&#8230;]"
+    },
+    {
+      "title": "Home Equity Investment Fees & Tax Implications in 2026",
+      "link": "https://themortgagereports.com/126341/home-equity-investment-fees-and-tax",
+      "source": "The Mortgage Reports",
+      "published": "2026-10-28T17:59:40+00:00",
+      "summary": "HEIs offer no monthly payments but they come with fees and tax consequences. See how costs work and what to expect."
+    },
+    {
+      "title": "Companies With the Highest HEI Limits: 6 Ranked for 2026",
+      "link": "https://themortgagereports.com/127491/hei-companies-highest-investment-limits",
+      "source": "The Mortgage Reports",
+      "published": "2026-10-27T18:58:58+00:00",
+      "summary": "Companies with the highest HEI limits include Hometap, Point, and Unison. Compare all 10 providers ranked by maximum payout."
     },
     {
       "title": "How to Get a Home Equity Loan With a High DTI Ratio",
@@ -28,90 +112,6 @@
       "source": "The Mortgage Reports",
       "published": "2026-10-26T17:10:54+00:00",
       "summary": "Worried your debt-to-income ratio is too high for a home equity loan? Learn what DTI lenders look for, the compensating factors that..."
-    },
-    {
-      "title": "The Agency builds global AI platform for luxury real estate",
-      "link": "https://www.housingwire.com/articles/the-agency-builds-global-ai-platform-for-luxury-real-estate/",
-      "source": "HousingWire",
-      "published": "2026-10-26T16:50:08+00:00",
-      "summary": "Agents and leaders can ask questions in plain language and get answers grounded in The Agency's own data"
-    },
-    {
-      "title": "Rentals Helped Me Quit My 14-Year Nursing Job (And Start My Own Business)",
-      "link": "https://www.biggerpockets.com/blog/real-estate-1348",
-      "source": "BiggerPockets Blog",
-      "published": "2026-10-26T11:00:50+00:00",
-      "summary": "Have you ever thought, maybe real estate investing isn\u2019t worth it anymore? Lindsay Barrientos didn\u2019t start buying rentals after the 2008 crash or ride the low-interest-rate wave in 2021. She [&#8230;]"
-    },
-    {
-      "title": "How Much Do Rental Properties Make? Real Numbers From Investors",
-      "link": "https://www.biggerpockets.com/blog/real-estate-1347",
-      "source": "BiggerPockets Blog",
-      "published": "2026-10-23T11:00:15+00:00",
-      "summary": "How much do landlords make? Whether you want to own rentals or want to benchmark your property portfolio, this episode is for you. We\u2019ve got four real rental properties with [&#8230;]"
-    },
-    {
-      "title": "Ran the Numbers but Nothing Cash Flows? What to Do Next (Rookie Reply)",
-      "link": "https://www.biggerpockets.com/blog/rookie-787",
-      "source": "BiggerPockets Blog",
-      "published": "2026-10-23T11:00:15+00:00",
-      "summary": "So you ran the numbers and the cash flow shows negative? You don\u2019t have to give up on rentals. With a few smarter assumptions, the right strategy, or the right [&#8230;]"
-    },
-    {
-      "title": "HEI for Debt Consolidation: How It Works in 2026",
-      "link": "https://themortgagereports.com/128001/hei-for-debt-consolidation",
-      "source": "The Mortgage Reports",
-      "published": "2026-10-22T20:16:56+00:00",
-      "summary": "HEI for debt consolidation gives you a lump sum from your home equity with no monthly payments or interest. Instead, you share future home appreciation."
-    },
-    {
-      "title": "If You\u2019re Making More Money Than Ever But Still Feel Broke, Hear This",
-      "link": "https://www.biggerpockets.com/blog/on-the-market-471",
-      "source": "BiggerPockets Blog",
-      "published": "2026-10-22T11:00:18+00:00",
-      "summary": "The affordability crisis isn\u2019t improving. Gas is above $4 per gallon, inflation just hit 3.7%, and paychecks aren\u2019t keeping pace. This is a tough spot for the American economy, but [&#8230;]"
-    },
-    {
-      "title": "Senior Citizen Mortgage Assistance | 2026 Programs & Resources",
-      "link": "https://themortgagereports.com/122535/senior-citizen-mortgage-assistance-programs",
-      "source": "The Mortgage Reports",
-      "published": "2026-10-21T16:02:07+00:00",
-      "summary": "Discover senior citizen mortgage assistance programs, including federal, state, and lender options to help lower housing costs."
-    },
-    {
-      "title": "Can I Refinance My Home After 1 Year? | Rules & Eligibility",
-      "link": "https://themortgagereports.com/122686/can-i-refinance-my-home-after-1-year-rules-eligibility",
-      "source": "The Mortgage Reports",
-      "published": "2026-10-20T21:54:17+00:00",
-      "summary": "Refinancing is possible sooner than you think. Explore waiting periods, lender rules, and factors that affect refinance eligibility."
-    },
-    {
-      "title": "Home prices top reasons homeowners stay put, survey finds",
-      "link": "https://www.inman.com/2026/10/16/why-homeowners-arent-selling-nationwide-survey/",
-      "source": "Inman",
-      "published": "2026-10-16T21:59:58+00:00",
-      "summary": "Forty-two percent of homeowners cite home prices or affordability as a reason they stay in their current homes, and 38 percent would move if market conditions improved, according to a Nationwide surve"
-    },
-    {
-      "title": "Too good to be true? DC joins others in cracking down on AI-edited listing photos",
-      "link": "https://www.inman.com/2026/10/16/too-good-to-be-true-dc-joins-others-in-cracking-down-on-ai-edited-listing-photos/",
-      "source": "Inman",
-      "published": "2026-10-16T20:39:22+00:00",
-      "summary": "Councilmember Christina Hendricks has proposed a bill that requires agents to disclose the use of 'altered images' in their marketing materials."
-    },
-    {
-      "title": "Compass files antitrust suit against CRMLS over listing rules",
-      "link": "https://www.inman.com/2026/10/16/compass-sues-crmls-antitrust-listing-rules/",
-      "source": "Inman",
-      "published": "2026-10-16T19:19:09+00:00",
-      "summary": "Compass filed an antitrust lawsuit against CRMLS on Friday and said it will pay MLS fines for agents at its company-owned brokerages who publicly market listings kept off the MLS."
-    },
-    {
-      "title": "Listing video that sells, buyer agent mistake that costs, buy vs. rent calculator that helps: Top 5",
-      "link": "https://www.inman.com/2026/10/16/listing-video-buyer-agent-mistake-buy-vs-rent-calculator-top-5/",
-      "source": "Inman",
-      "published": "2026-10-16T17:16:39+00:00",
-      "summary": "Looking for a quick catch-up on the buzziest stories of the week? Here\u2019s Inman Top 5, the most essential stories, according to Inman readers."
     },
     {
       "title": "This is the End and a New Beginning",
