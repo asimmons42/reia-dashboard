@@ -1,75 +1,89 @@
 {
-  "updated": "2026-11-16T22:40:00.260138+00:00",
+  "updated": "2026-11-24T00:29:46.860390+00:00",
   "items": [
     {
-      "title": "NAMB opposes VA loan fee increases in Senate bill",
-      "link": "https://www.housingwire.com/articles/namb-va-loan-fees-s4744/",
+      "title": "Georgia builders give affordable housing an essential new identity",
+      "link": "https://www.housingwire.com/articles/georgia-essential-homes-rebrand/",
       "source": "HousingWire",
-      "published": "2026-11-16T22:22:39+00:00",
-      "summary": "Legislation passed by the House would lift IRRRL fees to 1.42% and make higher charges permanent"
+      "published": "2026-11-23T21:39:47+00:00",
+      "summary": "Builders cite permit delays, infrastructure rules, and final plat holdups as price drivers"
     },
     {
-      "title": "Infill outlier Thomas James Homes \u2018landmaxxes\u2019 lots with ADUs",
-      "link": "https://www.housingwire.com/articles/thomas-james-homes-adus-seattle/",
+      "title": "Raleigh\u2019s housing reforms helped ease rents, Pew study finds",
+      "link": "https://www.housingwire.com/articles/raleigh-zoning-reforms-rents/",
       "source": "HousingWire",
-      "published": "2026-11-16T21:50:15+00:00",
-      "summary": "The builder's PNW division leverages attached ADUs to maximize yard space and lower costs through shared walls and utilities"
+      "published": "2026-11-23T21:18:48+00:00",
+      "summary": "Pew estimates Raleigh's inflation adjusted rents fell 15% from 2022 to 2025 amid a building boom"
     },
     {
-      "title": "Ackman says Trump can still end GSE conservatorships, relist this term",
-      "link": "https://www.housingwire.com/articles/ackman-fannie-freddie-conservatorship-relisting-trump/",
-      "source": "HousingWire",
-      "published": "2026-11-16T21:40:57+00:00",
-      "summary": "Pershing Square execs argue the administration has a political incentive to avoid \u2018handing control\u2019 of the GSEs"
-    },
-    {
-      "title": "Hedge fund pressures Invitation Homes to speed up home sales",
-      "link": "https://www.housingwire.com/articles/land-buildings-invitation-homes-activist-letter/",
-      "source": "HousingWire",
-      "published": "2026-11-16T20:24:55+00:00",
-      "summary": "Land &amp; Buildings urges Invitation Homes to sell more houses, return $2B a year to shareholders"
-    },
-    {
-      "title": "Why Transparency Matters More Than Ever in Real Estate Financing",
-      "link": "https://www.biggerpockets.com/blog/why-transparency-matters-more-than-ever-in-real-estate-financing",
-      "source": "BiggerPockets Blog",
-      "published": "2026-11-16T19:03:47+00:00",
-      "summary": "This article is presented by Dominion Financial. Every December, a bunch of very smart people publish their housing forecasts for the year ahead, and every December, I read them all. [&#8230;]"
-    },
-    {
-      "title": "What Is a Lady Bird Deed? How It Works and Who Can Use One",
-      "link": "https://themortgagereports.com/137245/lady-bird-deed",
+      "title": "Why Wednesday\u2019s PCE Report Could Move Mortgage Rates",
+      "link": "https://themortgagereports.com/137787/pce-gdp-thanksgiving-week-mortgage-rates",
       "source": "The Mortgage Reports",
-      "published": "2026-11-16T17:00:00+00:00",
-      "summary": "A lady bird deed can pass your home to heirs without probate. See which states allow it, how Medicaid treats it and what it means for..."
+      "published": "2026-11-23T20:30:00+00:00",
+      "summary": "October PCE inflation, the Q3 GDP update and new-home sales all land Wednesday, Nov. 25, two weeks before a Fed meeting where markets expect a rate hike. Here is what the numbers could mean for mortga"
     },
     {
-      "title": "AirDNA\u2019s Top Cash-on-Cash Short-Term Rental Markets for 2026",
-      "link": "https://www.biggerpockets.com/blog/top-cash-on-cash-short-term-rental-markets",
-      "source": "BiggerPockets Blog",
-      "published": "2026-11-16T16:26:29+00:00",
-      "summary": "Harrisburg/Hershey, Pennsylvania, has the best short-term rental cash-on-cash return in AirDNA&#8217;s newest data: 14.5%. Broken Bow, Oklahoma (cabin capital of the South, hot tub capital of the worl"
+      "title": "Cost cutting is not cost reduction; builders and trades face a test",
+      "link": "https://www.housingwire.com/articles/homebuilder-cost-cuts-trade-partners/",
+      "source": "HousingWire",
+      "published": "2026-11-23T20:29:09+00:00",
+      "summary": "Strategem models $12,919 in tariff costs per new home, as input cost indexes rose 10.4% year over year"
     },
     {
-      "title": "She Started with $4,000: Just 4 Years Later, She Has 80 Rental Units",
-      "link": "https://www.biggerpockets.com/blog/real-estate-1357",
-      "source": "BiggerPockets Blog",
-      "published": "2026-11-16T12:00:20+00:00",
-      "summary": "It takes most real estate investors several years or even decades to replace their income with rental properties. Cindy West didn\u2019t have that kind of time. She knew what she [&#8230;]"
+      "title": "Beyond commission splits: How wellness benefits give brokerages a recruiting edge",
+      "link": "https://www.housingwire.com/articles/brokerages-agent-health-benefits/",
+      "source": "HousingWire",
+      "published": "2026-11-23T20:12:23+00:00",
+      "summary": "Programs span group-style health plans and individualized coaching tied to retention and recruiting"
     },
     {
-      "title": "They Lived Paycheck to Paycheck. Now They Own 6+ Rental Units!",
-      "link": "https://www.biggerpockets.com/blog/rookie-797",
-      "source": "BiggerPockets Blog",
-      "published": "2026-11-16T12:00:02+00:00",
-      "summary": "What would you risk to give your family a better future? When you\u2019re living paycheck to paycheck, buying a first rental property can feel completely out of reach, until the [&#8230;]"
-    },
-    {
-      "title": "FHA 203(k) Loan | Requirements & Guide 2026",
-      "link": "https://themortgagereports.com/14946/fha-203k-loan-mortgage-lender-rates",
+      "title": "Reverse Mortgage Scams: Red Flags and How to Avoid Them",
+      "link": "https://themortgagereports.com/137243/reverse-mortgage-scams",
       "source": "The Mortgage Reports",
-      "published": "2026-11-13T23:00:05+00:00",
-      "summary": "The FHA 203(k) loan is a home improvement loan available in all 50 states. Learn the major benefits, plus some things to watch out for."
+      "published": "2026-11-23T17:30:00+00:00",
+      "summary": "Reverse mortgages aren't a scam, but scammers target the people who use them. Learn the red flags, your HECM protections, and where to..."
+    },
+    {
+      "title": "Top Schools, Low Prices, Positive Cash Flow: Is This One of America\u2019s Best Rental Market?",
+      "link": "https://www.biggerpockets.com/blog/top-schools-low-prices-positive-cash-flow-is-this-one-of-americas-best-rental-market",
+      "source": "BiggerPockets Blog",
+      "published": "2026-11-23T17:26:44+00:00",
+      "summary": "Memphis isn\u2019t just on investors\u2019 radar; it\u2019s leading the country. According to Realtor.com\u2019s 2026 Investor Report, the Memphis metro area had the highest investor buyer share of any of the [&#8230;]"
+    },
+    {
+      "title": "8 Rental Units Were All She Needed to Quit Corporate America (in 2 Years)",
+      "link": "https://www.biggerpockets.com/blog/real-estate-1360",
+      "source": "BiggerPockets Blog",
+      "published": "2026-11-23T12:00:49+00:00",
+      "summary": "Nadiyah Malbon didn\u2019t grow up with money, so she did what most \u201csuccessful\u201d people do: go to college, get a degree, and climb the corporate ladder. But after 23 years [&#8230;]"
+    },
+    {
+      "title": "1 Paid-Off Rental vs. 3 Rentals with Mortgages: Which One Wins?(Rookie Reply)",
+      "link": "https://www.biggerpockets.com/blog/rookie-800",
+      "source": "BiggerPockets Blog",
+      "published": "2026-11-23T12:00:31+00:00",
+      "summary": "Should you pay off your mortgage early or buy more rental properties? The first option gives you peace of mind, while the other allows you to build wealth much faster. [&#8230;]"
+    },
+    {
+      "title": "FHA Loan Guide | Requirements and Benefits 2026",
+      "link": "https://themortgagereports.com/17567/fha-mortgage-rates-federal-housing-administration-assumable-203k-mip",
+      "source": "The Mortgage Reports",
+      "published": "2026-11-20T22:10:00+00:00",
+      "summary": "FHA loans are easier to qualify for than many other mortgages. Learn what's required for an FHA loan and when it's a good option."
+    },
+    {
+      "title": "No-Appraisal HELOCs | Appraisal Process 2026",
+      "link": "https://themortgagereports.com/97647/heloc-appraisal-requirements",
+      "source": "The Mortgage Reports",
+      "published": "2026-11-20T22:10:00+00:00",
+      "summary": "You almost always need a new appraisal to get a HELOC. But the appraisal can actually work in your favor if your home's value has gone up."
+    },
+    {
+      "title": "No W-2? Why These Banks Still Say Yes! (Rookie Reply)",
+      "link": "https://www.biggerpockets.com/blog/rookie-799",
+      "source": "BiggerPockets Blog",
+      "published": "2026-11-20T12:00:21+00:00",
+      "summary": "Not having a W-2, trusting the wrong numbers, or feeling unprepared for closing day can stop a lot of new investors before they get started. But none of them have [&#8230;]"
     },
     {
       "title": "NAR saved for his $541K exit; now it won\u2019t pay, ex-CFO says",
@@ -98,20 +112,6 @@
       "source": "Inman",
       "published": "2026-11-13T15:09:06+00:00",
       "summary": "Let social media expert Katie Lance walk you through everything you need to know to create more effective and engaging content."
-    },
-    {
-      "title": "Benefits of a Paid-Off House in Retirement: Keep or Tap?",
-      "link": "https://themortgagereports.com/137241/benefits-paid-off-house-retirement",
-      "source": "The Mortgage Reports",
-      "published": "2026-11-12T22:44:28+00:00",
-      "summary": "Weigh the benefits of a paid-off house in retirement against tapping equity. See when a HELOC or reverse mortgage line helps, and when to leave it alone."
-    },
-    {
-      "title": "Fed\u2019s Waller Floats a Half-Point Hike After Hot Inflation. What It Means for Your HELOC, ARM or Mortgage",
-      "link": "https://themortgagereports.com/137259/october-cpi-2026-mortgage-rates",
-      "source": "The Mortgage Reports",
-      "published": "2026-11-12T22:33:45+00:00",
-      "summary": "October CPI rose 0.4%, above forecasts, and Fed Gov. Christopher Waller said a half-point December hike should be considered. What it means for fixed rates, ARMs and HELOCs."
     },
     {
       "title": "This is the End and a New Beginning",
